@@ -1,0 +1,11 @@
+name = "ParquetIO"
+uuid = "12c9498c-612a-11e9-3465-dfea0c82c75b"
+authors = ["FrancisH-C <francishchantal@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+Pandas = "eadc2687-ae89-51f9-a5d9-86b5a6373a9c"
+ProgressMeter = "92933f4c-e287-5a05-a399-4b506db050ca"
+PyCall = "438e738f-606a-5dbb-bf0a-cddfbfd45ab0"
+Suppressor = "fd094767-a336-5f1f-9728-57cf17d0bbfb"
