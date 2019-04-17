@@ -1,6 +1,6 @@
 # ParquetIO
 
-Uses Pandas to import parquet files as DataFrames.DataFrame.
+Uses Pandas.jl to import parquet files as DataFrames.DataFrame.
 Works with `nothing` value unlike other solution.
 
 ## Instalation
