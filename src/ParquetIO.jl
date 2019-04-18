@@ -1,5 +1,7 @@
 module ParquetIO
 
+export import_pqt, export_pqt
+
 #--
 using DataFrames, PyCall, Suppressor, ProgressMeter
 import Pandas
