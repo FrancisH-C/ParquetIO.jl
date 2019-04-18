@@ -1,7 +1,7 @@
 # ParquetIO
 
 Uses Pandas.jl to import parquet files as DataFrames.DataFrame.
-Works with `nothing` value unlike other solution.
+Works with `Nothing` type unlike other solution.
 
 ## Instalation
 ```
@@ -17,4 +17,3 @@ import ParquetIO
 df=ParquetIO.import_pqt("file.pqt")
 ParquetIO.(df, "anotherfile.pqt")
 ```
-
