@@ -11,8 +11,8 @@
 Recode every entry of a DataFrame
 
 # Arguments
-* `df::DataFrame` : a DataFrame
-* `pair::Pair` : a recoding pair
+* `df` : a DataFrame
+* `pair` : a recoding pair
 
 # Examples
 ```
@@ -28,46 +28,34 @@ end
 
 
 """
-`todummy!(df)`
+`todummy!(df::DataFrame, dummy=1::Any)`
 
-putting dummy value -1 instead of missing or nothing
-
-# Arguments
-
-* df::DataFrame
+putting dummy value (defaut=-1) instead of missing or nothing
 """
-function todummy!(df::DataFrame)
-	recode!(df, missing => -1)
-	recode!(df, nothing => -1)
+function todummy!(df::DataFrame, dummy=1::Any)
+	recode!(df, missing => dummy)
+	recode!(df, nothing => dummy)
 	return df
 end
 
 
 """
-`tonothing!(df)`
+`tonothing!(df::DataFrame, dummy=1::Any)`
 
-changin dummy -1 or missing to nothing value
-
-# Arguments
-
-* df::DataFrame
+changin dummy value (defaut=-1) or missing to nothing value
 """
-function tonothing!(df::DataFrame)
-	recode!(df, -1 => nothing)
+function tonothing!(df::DataFrame, dummy=1::Any)
+	recode!(df, dummy => nothing)
 	recode!(df, missing => nothing)
 end
 
 
 """
-`tomissing!(df::DataFrame)`
+`tomissing!(df::DataFrame, dummy=1::Any)`
 
-changin dummy -1 or nothing to missing value 
-
-# Arguments
-
-* df::DataFrame
+changin dummy value (defaut=-1) or nothing to missing value 
 """
-function tomissing!(df::DataFrame)
-	recode!(df, -1 => missing )
+function tomissing!(df::DataFrame, dummy=1::Any)
+	recode!(df, dummy => missing )
 	recode!(df, nothing => missing )
 end
