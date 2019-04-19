@@ -27,8 +27,8 @@ export import_pqt,
 
 include("lib/import_pqt.jl")
 include("lib/export_pqt.jl")
-#include("lib/csv2pqt.jl")
-#include("lib/pqt2csv.jl")
-#include("lib/recoding.jl")
+include("lib/csv2pqt.jl")
+include("lib/pqt2csv.jl")
+include("lib/recoding.jl")
 
 end # module
