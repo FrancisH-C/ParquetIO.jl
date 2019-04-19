@@ -15,10 +15,10 @@ import Pandas
 export import_pqt, 
        export_pqt,
        recode!
-#       tonothing!,
-#       todummy!,
-#       csv2pqt,
-#       pqt2csv
+       tonothing!,
+       todummy!,
+       csv2pqt,
+       pqt2csv
 
 
 ################################################################################
