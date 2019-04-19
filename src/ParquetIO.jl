@@ -13,8 +13,8 @@ import Pandas
 ################################################################################
 
 export import_pqt, 
-       export_pqt
-       recode!,
+       export_pqt,
+       recode!
 #       tonothing!,
 #       todummy!,
 #       csv2pqt,
