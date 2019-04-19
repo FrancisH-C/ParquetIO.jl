@@ -26,7 +26,8 @@ input *.pqt, output a DataFrame
 function import_pqt(pqt_file::String)
 	println(pqt_file)
 	#panda_df=Pandas.DataFrame(pd.read_parquet(pqt_file))
-	return pd.read_parquet(pqt_file)
+	pd.read_parquet(pqt_file)
+	return 1
 	# panda_df ↦ julia_df : Pandas → DataFrames
 	names=Symbol.(Pandas.values.(Pandas.columns(panda_df)))
 	df=DataFrames.DataFrame()
