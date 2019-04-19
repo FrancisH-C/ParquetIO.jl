@@ -14,7 +14,7 @@ import Pandas
 
 export import_pqt, 
        export_pqt
-#       CategoricalArrays.recode!,
+       recode!,
 #       tonothing!,
 #       todummy!,
 #       csv2pqt,
