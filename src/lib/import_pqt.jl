@@ -11,6 +11,7 @@ input *.pqt, output a DataFrame
 * `pqt_file::String` : is a full path name of the parquet file 
 """
 function import_pqt(pqt_file::String)
+ 	pd=pyimport("pandas")
 	panda_df=Pandas.DataFrame(pd.read_parquet(pqt_file))
 	# panda_df ↦ julia_df : Pandas → DataFrames
 	return panda_df
