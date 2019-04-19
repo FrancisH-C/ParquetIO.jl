@@ -3,15 +3,15 @@
 ################################################################################
 #--
 """
-`ParquetIO.export_pqt(df, filename)`
+`ParquetIO.export_pqt(filename, df)`
 
 input a DataFrame,  outpout a parquet file
 
 # Arguments
-* `df::DataFrame` : DataFrame to export as parquet
 * `filename::String` : parquet file name to export
+* `df::DataFrame` : DataFrame to export as parquet
 """
-function export_pqt(df, filename)
+function export_pqt(filename::String, df::DataFrame)
         # julia_df ↦ panda_df : DataFrames → df_pd
         pd=pyimport("pandas")
         columns=names(df)

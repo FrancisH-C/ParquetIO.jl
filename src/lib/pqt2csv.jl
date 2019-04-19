@@ -1,7 +1,10 @@
 ################################################################################
-# csv ↦ pqt
+# pqt ↦ csv 
 ################################################################################
-
+"""
+`pqt2csv(file_pqt, output_csv; recode=false)`
+file.pqt ↦ file.csv : PaquetFile → CSVFile
+"""
 function pqt2csv(file_pqt, output_csv; recode=false)
 	df=import_pqt(file_pqt)
 	if recode
