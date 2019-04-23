@@ -14,6 +14,7 @@ import Pandas
 
 export import_pqt, 
        export_pqt,
+       isnothing, 
        recode!,
        tonothing!,
        todummy!,
