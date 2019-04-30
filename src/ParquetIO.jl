@@ -5,7 +5,7 @@ module ParquetIO
 # Dependencies
 ################################################################################
 
-using DataFrames, PyCall, Suppressor, ProgressMeter, CSV, CategoricalArrays
+using DataFrames, PyCall Suppressor, CSV, CategoricalArrays
 import Pandas
 
 ################################################################################

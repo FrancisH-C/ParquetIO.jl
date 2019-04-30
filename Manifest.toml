@@ -167,12 +167,6 @@ uuid = "de0858da-6303-5e67-8744-51eddeeeb8d7"
 deps = ["Printf"]
 uuid = "9abbd945-dff8-562f-b5e8-e1ebf5ef1b79"
 
-[[ProgressMeter]]
-deps = ["Distributed", "Printf", "Random", "Test"]
-git-tree-sha1 = "48058bc11607676e5bbc0b974af79106c6200787"
-uuid = "92933f4c-e287-5a05-a399-4b506db050ca"
-version = "0.9.0"
-
 [[PyCall]]
 deps = ["Conda", "Dates", "Libdl", "LinearAlgebra", "MacroTools", "Pkg", "Serialization", "Statistics", "Test", "VersionParsing"]
 git-tree-sha1 = "6e5bac1b1faf3575731a6a5b76f638f2389561d3"
@@ -231,12 +225,6 @@ deps = ["DataStructures", "DelimitedFiles", "LinearAlgebra", "Missings", "Printf
 git-tree-sha1 = "435707791dc85a67d98d671c1c3fcf1b20b00f94"
 uuid = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
 version = "0.29.0"
-
-[[Suppressor]]
-deps = ["Compat"]
-git-tree-sha1 = "a39342763981e766a72938b59032dc02a2d74da5"
-uuid = "fd094767-a336-5f1f-9728-57cf17d0bbfb"
-version = "0.1.1"
 
 [[TableTraits]]
 deps = ["IteratorInterfaceExtensions", "Test"]
