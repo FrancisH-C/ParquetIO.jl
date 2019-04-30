@@ -1,11 +1,10 @@
 module ParquetIO
 
-
 ################################################################################
 # Dependencies
 ################################################################################
 
-using DataFrames, PyCall Suppressor, CSV, CategoricalArrays
+using DataFrames, PyCall, CSV, CategoricalArrays
 import Pandas
 
 ################################################################################
@@ -20,7 +19,6 @@ export import_pqt,
        todummy!,
        csv2pqt,
        pqt2csv
-
 
 ################################################################################
 # Load lib
