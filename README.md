@@ -1,3 +1,6 @@
+NOT WORKING.
+
+
 # ParquetIO
 
 Uses Pandas.jl to import parquet files as DataFrames.DataFrame.
