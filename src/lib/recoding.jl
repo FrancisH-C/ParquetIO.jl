@@ -1,3 +1,4 @@
+using CategoricalArrays, DataFrames, WeakRefStrings
 #--
 ################################################################################
 # Overwrite recode to work with DataFrame 
@@ -20,11 +21,36 @@ recode!(df, -1 => nothing)
 recode!(df, missing => -1)
 ```
 """
-function CategoricalArrays.recode!(df::DataFrame, pairs::Pair)
+function CategoricalArrays.recode!(df::DataFrame, pair::Pair)
+	new_type=typeof(pair[2])
 	for i in 1:size(df)[2]
-		recode!(df[i], pairs::Pair)
+		old_type = eltype(df[:,i])
+		df[:, i] = convert(Array{Union{old_type, new_type}}, df[:, i])
+		recode!(df[i], pair::Pair)
+
+		try
+			df[:, i] = convert(Array{new_type}, df[:, i])
+		catch
+		end
+		try
+			df[:, i] = convert(Array{old_type}, df[:, i])
+		catch
+		end
 	end
 end
+
+
+"""
+`toNaN!(df::DataFrame, dummy=1::Any)`
+
+putting a float (NaN) value instead of missing or nothing
+"""
+function toNaN!(df::DataFrame, float=NaN::Float64)
+	recode!(df, missing => float)
+	recode!(df, nothing => float)
+	return df
+end
+
 
 
 """

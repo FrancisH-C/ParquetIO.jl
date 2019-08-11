@@ -5,10 +5,10 @@
 `pqt2csv(file_pqt, output_csv; recode=false)`
 file.pqt ↦ file.csv : PaquetFile → CSVFile
 """
-function pqt2csv(file_pqt, output_csv; recode=false)
+function pqt2csv(file_pqt, output_csv; recode=true)
 	df=import_pqt(file_pqt)
 	if recode
-		todummy!(df)
+		toNaN!(df)
 	end
 	try # will work if df does not contain nothing value
         	CSV.write(output_csv, df)
