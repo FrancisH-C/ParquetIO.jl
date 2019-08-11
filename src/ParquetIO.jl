@@ -4,7 +4,8 @@ module ParquetIO
 # Dependencies
 ################################################################################
 
-using DataFrames, PyCall, CSV, CategoricalArrays
+using DataFrames, PyCall, CSV, CategoricalArrays, WeakRefStrings
+
 import Pandas
 
 ################################################################################
