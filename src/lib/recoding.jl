@@ -17,16 +17,18 @@ Recode every entry of a DataFrame
 # Examples
 ```
 recode!(df, -1 => nothing)
-recode!(df, missing => -1)
+recode!(df, missing => NaN)
 ```
 """
 function CategoricalArrays.recode!(df::DataFrame, pair::Pair)
 	new_type=typeof(pair[2])
 	for i in 1:size(df)[2]
+		# recode a given column
 		old_type = eltype(df[:,i])
 		df[:, i] = convert(Array{Union{old_type, new_type}}, df[:, i])
 		recode!(df[i], pair::Pair)
 
+		# If possible, remove the union and use only one type
 		try
 			df[:, i] = convert(Array{new_type}, df[:, i])
 		catch
@@ -42,7 +44,7 @@ end
 """
 `toNaN!(df::DataFrame, dummy=1::Any)`
 
-putting a float (NaN) value instead of missing or nothing
+putting a float (default=NaN) value instead of missing or nothing
 """
 function toNaN!(df::DataFrame, float=NaN::Float64)
 	recode!(df, missing => float)

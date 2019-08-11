@@ -1,10 +1,7 @@
-NOT WORKING.
-
-
 # ParquetIO
 
 Uses Pandas.jl to import parquet files as DataFrames.DataFrame.
-Works with `Nothing` type unlike other solution.
+Overwrite recode! and uses it to recode every missing and nothing to NaN::Float64 (a usable type for parquet)
 
 ## Instalation
 ```
@@ -16,9 +13,9 @@ pkg> add https://github.com/FrancisH-C/ParquetIO.jl
 Import file.pqt as DataFrame then export it to anotherfile.pqt :
 
 ```
-import ParquetIO
-df=ParquetIO.import_pqt("file.pqt")
-ParquetIO.export_pqt(df, "anotherfile.pqt")
+using ParquetIO
+df=import_pqt("file.pqt")
+export_pqt("anotherfile.pqt", df)
 ```
 
 From file.csv to file.pqt and then back to file.csv :
