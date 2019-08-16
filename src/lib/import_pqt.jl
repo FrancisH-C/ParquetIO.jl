@@ -17,7 +17,7 @@ function import_pqt(pqt_file::String)
 	names=Symbol.(Pandas.values.(Pandas.columns(panda_df)))
 	df=DataFrames.DataFrame()
 	for i in 1:length(names)
-		df[names[i]]=Array(panda_df[names[i]])
+		df[!, names[i]]=Array(panda_df[names[i]])
 	end
 	return df
 end

@@ -17,7 +17,7 @@ function export_pqt(filename::String, df::DataFrame)
         columns=names(df)
         panda_df=Pandas.DataFrame()
         for i in 1:length(columns)
-                panda_df[columns[i]]=df[columns[i]]
+                panda_df[columns[i]] = df[!, columns[i]]
         end
         # export
         pd_df=pd.DataFrame(panda_df)
