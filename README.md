@@ -26,16 +26,26 @@ pkg> add https://github.com/FrancisH-C/ParquetIO.jl
 
 ## Usage
 
-To import file.pqt as DataFrame then export it to anotherfile.pqt :
+- To import file.pqt as DataFrame then export it to anotherfile.pqt :
 ```
 using ParquetIO
 df=import_pqt("file.pqt")
 export_pqt("anotherfile.pqt", df)
 ```
 
-From file.csv to file.pqt and then back to file.csv :
+- From file.csv to file.pqt and then back to file.csv :
 
 ```
 csv2pqt("file.csv", "parquet.pqt")
 pqt2csv("parquet.pqt", "file.csv")
+```
+- All csv data to parquet 
+```
+in_path="a_path"
+out_path="another_path"
+out_files=readlines(pipeline(`printf '%s\n' "$in_files"`, `sed 's/.csv/.pqt/g'`))
+
+for i in 1:length(in_files)
+	csv2pqt("$in_path/$(in_files[i])", "$out_path/$(out_files[i])")
+end
 ```
