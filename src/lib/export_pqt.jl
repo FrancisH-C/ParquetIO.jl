@@ -1,7 +1,6 @@
 ################################################################################
 # Export Parquet
 ################################################################################
-#--
 """
 `ParquetIO.export_pqt(filename, df)`
 
@@ -14,13 +13,12 @@ input a DataFrame,  outpout a parquet file
 function export_pqt(filename::String, df::DataFrame)
         # julia_df ↦ panda_df : DataFrames → df_pd
         pd=pyimport("pandas")
-        columns=names(df)
+        columns_names=names(df)
         panda_df=Pandas.DataFrame()
-        for i in 1:length(columns)
-                panda_df[columns[i]] = df[!, columns[i]]
+        for i in 1:length(columns_name)
+                panda_df[columns_name[i]] = df[!, columns_name[i]]
         end
         # export
         pd_df=pd.DataFrame(panda_df)
         pd_df.to_parquet(filename)
 end
-#--
