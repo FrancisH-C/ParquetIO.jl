@@ -13,7 +13,7 @@ input a DataFrame,  outpout a parquet file
 function export_pqt(filename::String, df::DataFrame)
         # julia_df ↦ panda_df : DataFrames → df_pd
         pd=pyimport("pandas")
-        columns_names=names(df)
+        columns_name=names(df)
         panda_df=Pandas.DataFrame()
         for i in 1:length(columns_name)
                 panda_df[columns_name[i]] = df[!, columns_name[i]]
