@@ -1,12 +1,13 @@
-using ParquetIO
-#include("../src/ParquetIO.jl")
+#using ParquetIO
+include("../src/ParquetIO.jl")
+using .ParquetIO
 
 pqt="test.pqt"
 csv="test.csv"
 
-@info "Testing ParqueIO"
+@info "Testing ParquetIO"
 df=import_pqt(pqt)
-export_pqt("test.pqt", df)
+#export_pqt("test.pqt", df)
 
-csv2pqt(csv, pqt)
-pqt2csv(pqt, csv)
+#csv2pqt(csv, pqt)
+#pqt2csv(pqt, csv)
