@@ -13,12 +13,12 @@ import Pandas
 ################################################################################
 
 export import_pqt, 
-       export_pqt,
-       recode!,
-       tonothing!,
-       todummy!,
-       csv2pqt,
-       pqt2csv
+	   export_pqt,
+	   recode!,
+	   tonothing!,
+	   todummy!,
+	   csv2pqt,
+	   pqt2csv
 
 ################################################################################
 # Load lib
