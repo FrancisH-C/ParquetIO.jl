@@ -1,13 +1,21 @@
 #using ParquetIO
 include("../src/ParquetIO.jl")
-using .ParquetIO
+using .ParquetIO, CSV
 
 pqt="test.pqt"
 csv="test.csv"
 
 @info "Testing ParquetIO"
-df=import_pqt(pqt)
-#export_pqt("test.pqt", df)
+df=CSV.read(csv)
+# Int128
+df[!,end] = convert.(Int128, df[!,end])
+df[!,end] = df[!,end].^2
 
-#csv2pqt(csv, pqt)
-#pqt2csv(pqt, csv)
+# testing
+#display(df)
+export_pqt(pqt, df)
+df=import_pqt(pqt)
+#display(df)
+
+csv2pqt(csv, pqt)
+pqt2csv(pqt, csv)

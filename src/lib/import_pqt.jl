@@ -9,7 +9,7 @@ input *.pqt, output a DataFrame
 # Arguments
 * `pqt_file::String` : is a full path name of the parquet file 
 """
-function import_pqt(pqt_file::String, convertUInt=true::Bool)
+function import_pqt(pqt_file::String; convertUInt=true::Bool, stringasint=true::Bool)
 	pd=pyimport("pandas")
 	panda_df=Pandas.DataFrame(pd.read_parquet(pqt_file))
 	# panda_df ↦ julia_df : Pandas → DataFrames
@@ -26,6 +26,14 @@ function import_pqt(pqt_file::String, convertUInt=true::Bool)
 		
 		if convertUInt && (typeof(df[1, columns_name[i]]) <: Unsigned)
 			df[!, columns_name[i]] = convert.(Int128, df[!, columns_name[i]]) 
+		end
+
+		# convertion
+		if stringasint && (typeof(df[1, columns_name[i]]) <: String)
+			try # try int129 ↦ string
+				df[!, columns_name[i]] = parse.(Int128, df[!, columns_name[i]]) 
+			catch
+			end
 		end
 	end
 	return df
