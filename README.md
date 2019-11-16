@@ -52,10 +52,10 @@ missing packages forgot here.
 
 - All csv data to parquet 
 
-> julia> in_path="a_path"
-> julia> out_path="another_path"
-> julia> out_files=readlines(pipeline(`printf '%s\n' "$in_files"`, `sed 's/.csv/.pqt/g'`))
-> 
-> julia> for i in 1:length(in_files)
-> 	csv2pqt("$in_path/$(in_files[i])", "$out_path/$(out_files[i])")
-> end
+     julia> in_path="a_path"
+     julia> out_path="another_path"
+     julia> out_files=readlines(pipeline(`printf '%s\n' "$in_files"`, `sed 's/.csv/.pqt/g'`))
+
+     julia> for i in 1:length(in_files)
+     			csv2pqt("$in_path/$(in_files[i])", "$out_path/$(out_files[i])")
+     		end
