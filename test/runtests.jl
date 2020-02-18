@@ -12,7 +12,7 @@ csv="test.csv"
 
 display(df)
 
-CSV.write("test2", df)
+CSV.write("test2.csv", df)
 df=CSV.read(csv)
 display(df)
 
@@ -24,5 +24,5 @@ export_pqt(pqt, df)
 df=import_pqt(pqt)
 
 csv2pqt(csv, pqt)
-pqt2csv(pqt, csv)
+pqt2csv(pqt, "test2.csv")
 end
