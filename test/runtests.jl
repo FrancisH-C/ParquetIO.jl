@@ -5,7 +5,7 @@ using Test, ParquetIO, CSV, DataFrames
 pqt="test.pqt"
 csv="test.csv"
 df=CSV.read(csv)
-df=CSV.write(csv)
+df=CSV.write(csv, df)
 
 # Int128
 #df[!,end] = convert.(Int128, df[:,end])
