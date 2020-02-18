@@ -12,7 +12,7 @@ csv="test.csv"
 
 display(df)
 
-CSV.write(csv, df)
+CSV.write("test2", df)
 df=CSV.read(csv)
 display(df)
 
