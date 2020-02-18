@@ -19,11 +19,11 @@ function export_pqt(filename::String, df::DataFrame, intasstring=true::Bool)
 			# convertion
 			if intasstring && (typeof(df[1, columns_name[i]]) <: Int128)
 				try # try int128 ↦ string
-					df[!, columns_name[i]] = string.(df[!, columns_name[i]]) 
+					df[:, columns_name[i]] = string.(df[:, columns_name[i]]) 
 				catch
 				end
 			end
-			panda_df[columns_name[i]] = df[!, columns_name[i]]
+			panda_df[columns_name[i]] = df[:, columns_name[i]]
 		end
 		# export
 		pd_df=pd.DataFrame(panda_df)

@@ -1,4 +1,3 @@
-#using ParquetIO
 using Test, ParquetIO, CSV
 
 pqt="test.pqt"
@@ -12,12 +11,10 @@ df=CSV.read(csv)
  df[:,end] = convert.(Int128, df[:,end])
  df[:,end] = df[:,end].^2
 end
-#
-## testing
-##display(df)
+
+println("testing")
 export_pqt(pqt, df)
 df=import_pqt(pqt)
-#display(df)
-#
+
 csv2pqt(csv, pqt)
 pqt2csv(pqt, csv)
