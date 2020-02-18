@@ -28,18 +28,25 @@ pkg> add https://github.com/FrancisH-C/ParquetIO.jl
 
 2. Having the right tool for python in julia
 
-Assuming JULIA_DEPOT_PATH is a path to your .julia file
+Assuming JULIA_DEPOT_PATH is a path to your .julia file. If not run,
+
+```bash
+shell> echo "JULIA_DEPOT_PATH=~/.julia/" >> ~/.bashrc
+```
+
+And then,
 
 ```
 shell> echo ENV["PYTHON"] = "" >>"\$JULIA_DEPOT_PATH/config/startup.jl"
 pkg> add Conda, PyCall
+pkg> build PyCall
 julia> using Conda, PyCall
 ```
 
 3. Make sure all python's packages are install for *PyCall.jl* 
 
 ```
-pkg> Conda.add("numpy");Conda.add("pandas");Conda.add("pyarrow")
+julia> Conda.add("numpy");Conda.add("pandas");Conda.add("pyarrow")
 ```
 
 Then, try `julia> using ParquetIO` and if there is a error messages, install
