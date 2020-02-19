@@ -12,7 +12,6 @@ input a DataFrame,	outpout a parquet file
 """
 function export_pqt(filename::String, df::DataFrame, intasstring=true::Bool)
 		# julia_df ↦ panda_df : DataFrames → df_pd
-		println("like woah")
 		pd=pyimport("pandas")
 		columns_name=names(df)
 		panda_df=Pandas.DataFrame()

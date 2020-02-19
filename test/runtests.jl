@@ -10,11 +10,9 @@ df=DataFrame(int64=[1,2],string=["hello", "world"],
 pqt="test.pqt"
 csv="test.csv"
 
-display(df)
 
 CSV.write(csv, df)
 df=CSV.read(csv)
-display(df)
 
 # Int128
 df[!,end] = convert.(Int128, df[:,end])
