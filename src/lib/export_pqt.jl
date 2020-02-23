@@ -15,14 +15,14 @@ function export_pqt(filename::String, df::DataFrame, intasstring=true::Bool)
 		pd=pyimport("pandas")
 		columns_name=names(df)
 		panda_df=Pandas.DataFrame()
+                int128_to_string(df)
 		for i in 1:length(columns_name)
-			# convertion
-			if intasstring && (typeof(df[1, columns_name[i]]) <: Int128)
-				try # try int128 ↦ string
-					df[!, columns_name[i]] = string.(df[!, columns_name[i]]) 
-				catch
-				end
-			end
+			#if intasstring && (typeof(df[1, columns_name[i]]) <: Int128)
+			#	try # try int128 ↦ string
+			#		df[!, columns_name[i]] = string.(df[!, columns_name[i]]) 
+			#	catch
+			#	end
+			#end
 			panda_df[columns_name[i]] = df[!, columns_name[i]]
 		end
 		# export

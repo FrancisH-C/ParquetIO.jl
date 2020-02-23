@@ -46,12 +46,8 @@ julia> using Conda, PyCall
 3. Make sure all python's packages are install for *PyCall.jl* 
 
 ```
-julia> Conda.add("numpy");Conda.add("pandas");Conda.add("pyarrow")
+julia> Conda.add("numpy");Conda.add("pandas");Conda.add("pyarrow");Conda.add("fastparquet")
 ```
-
-Then, try `julia> using ParquetIO` and if there is a error messages, install
-missing packages forgot here.
-
 
 ## Usage
 
