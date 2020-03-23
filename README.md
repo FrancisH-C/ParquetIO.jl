@@ -19,35 +19,13 @@ finaly convert it to DataFrames.DataFrame (revert this to export).
 To do so, it overwrites recode! and uses it to recode every missing or nothing
 value to NaN::Float64.
 
-## Instalation
-1. Install ParquetIO in julia
+## Installation
 
 ```
 pkg> add https://github.com/FrancisH-C/ParquetIO.jl
+julia> using ParquetIO
 ```
 
-2. Having the right tool for python in julia
-
-Assuming JULIA_DEPOT_PATH is a path to your .julia file. If not run,
-
-```bash
-shell> echo "JULIA_DEPOT_PATH=~/.julia/" >> ~/.bashrc
-```
-
-And then,
-
-```
-shell> echo ENV["PYTHON"] = "" >>"\$JULIA_DEPOT_PATH/config/startup.jl"
-pkg> add Conda, PyCall
-pkg> build PyCall
-julia> using Conda, PyCall
-```
-
-3. Make sure all python's packages are install for *PyCall.jl* 
-
-```
-julia> Conda.add("numpy");Conda.add("pandas");Conda.add("pyarrow");Conda.add("fastparquet")
-```
 
 ## Usage
 
@@ -76,4 +54,35 @@ julia> out_files=readlines(pipeline(`printf '%s\n' "$in_files"`, `sed 's/.csv/.p
 julia> for i in 1:length(in_files)
            csv2pqt("$in_path/$(in_files[i])", "$out_path/$(out_files[i])")
        end
+```
+
+
+## Manual installation
+1. Install ParquetIO in julia
+
+```
+pkg> add https://github.com/FrancisH-C/ParquetIO.jl
+```
+
+2. Having the right tool for python in julia
+
+Assuming JULIA_DEPOT_PATH is a path to your .julia file. If not run,
+
+```bash
+shell> echo "JULIA_DEPOT_PATH=~/.julia/" >> ~/.bashrc
+```
+
+And then,
+
+```
+shell> echo ENV["PYTHON"] = "" >>"\$JULIA_DEPOT_PATH/config/startup.jl"
+pkg> add Conda, PyCall
+pkg> build PyCall
+julia> using Conda, PyCall
+```
+
+3. Make sure all python's packages are install for *PyCall.jl* 
+
+```
+julia> Conda.add("numpy");Conda.add("pandas");Conda.add("pyarrow");Conda.add("fastparquet")
 ```

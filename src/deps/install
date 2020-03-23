@@ -1,0 +1,7 @@
+#!/bin/bash
+[ -z  $JULIA_DEPOT_PATH ] && echo 'export JULIA_DEPOT_PATH="$HOME/.julia/"' >> $HOME/.bashrc
+
+echo 'ENV["PYTHON"] ="" ' >> "$JULIA_DEPOT_PATH/config/startup.jl"
+
+julia lib/installation/activate_conda1.jl
+julia lib/installation/activate_conda2.jl
