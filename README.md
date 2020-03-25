@@ -21,11 +21,13 @@ value to NaN::Float64.
 
 ## Installation
 
+Build in Julia doesn't run the as intended, you'll need to run the file manually.
+
 ```
 pkg> add https://github.com/FrancisH-C/ParquetIO.jl
+julia> julia src/deps/build.jl
 julia> using ParquetIO
 ```
-
 
 ## Usage
 
@@ -58,6 +60,8 @@ julia> for i in 1:length(in_files)
 
 
 ## Manual installation
+ 
+To use if automatic installation doesn't work
 1. Install ParquetIO in julia
 
 ```
