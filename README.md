@@ -90,3 +90,12 @@ julia> using Conda, PyCall
 ```
 julia> Conda.add("numpy");Conda.add("pandas");Conda.add("pyarrow");Conda.add("fastparquet")
 ```
+
+
+# Note : Install package with Conda using pip
+To install <package>
+```
+julia> using Conda
+julia> Conda.add("pip")
+shell> $JULIA_DEPOT_PATH/conda/3/bin/pip install <package>
+```
