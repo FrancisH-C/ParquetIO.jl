@@ -1,7 +1,6 @@
 using Documenter, Example
 
 makedocs(
-    modules = [ParquetIO],
     sitename = "ParquetIO.jl",
     authors = "Francis Huot-Chantal",
     checkdocs = :exports,
