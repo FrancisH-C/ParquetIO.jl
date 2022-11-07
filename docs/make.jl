@@ -3,5 +3,5 @@ using Documenter, Example
 makedocs(sitename="My Documentation")
 
 deploydocs(
-    repo = "github.com/USER_NAME/PACKAGE_NAME.jl.git",
+    repo = "https://github.com/FrancisH-C/ParquetIO.jl"
 )
