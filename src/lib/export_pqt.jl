@@ -4,7 +4,7 @@
 """
 `ParquetIO.export_pqt(filename, df)`
 
-input a DataFrame,	outpout a parquet file
+input a DataFrame, output a parquet file
 
 # Arguments
 * `filename::String` : parquet file name to export
