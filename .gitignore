@@ -1,3 +1,6 @@
 *.swp
 test/test.*
 *.org
+*.log
+*.csv
+*.pqt
