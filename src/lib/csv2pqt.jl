@@ -6,7 +6,7 @@
 file.csv ↦ file.pqt : CSVFile → PaquetFile
 """
 function csv2pqt(file_csv::String, output_pqt::String; recode=true)
-	df=CSV.read(file_csv)
+	df=CSV.read(file_csv, DataFrame)
 	if recode
 		toNaN!(df)
 	end

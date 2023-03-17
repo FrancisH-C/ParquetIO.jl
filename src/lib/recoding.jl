@@ -80,7 +80,6 @@ putting a float (default=NaN) value instead of missing or nothing
 """
 function toNaN!(df::DataFrame, float=NaN::Float64)
 	recode!(df, missing => float)
-	recode!(df, nothing => float)
 	return df
 end
 
@@ -93,7 +92,6 @@ putting dummy value (defaut=-1) instead of missing or nothing
 """
 function todummy!(df::DataFrame, dummy=1::Any)
 	recode!(df, missing => dummy)
-	recode!(df, nothing => dummy)
 	return df
 end
 
@@ -116,5 +114,4 @@ changin dummy value (defaut=-1) or nothing to missing value
 """
 function tomissing!(df::DataFrame, dummy=1::Any)
 	recode!(df, dummy => missing )
-	recode!(df, nothing => missing )
 end
